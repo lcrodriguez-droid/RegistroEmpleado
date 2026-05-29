@@ -25,8 +25,8 @@ int main()
     int op = 0, i = 0;
     do
     {
-        Console.WriteLine($"registro  # {i+1}");
-        
+        Console.WriteLine($"registro  # {i + 1}");
+
         op = menu();
         switch (op)
         {
@@ -35,6 +35,7 @@ int main()
 
                 break;
         }
+
 
     } while (op != 4);
         
