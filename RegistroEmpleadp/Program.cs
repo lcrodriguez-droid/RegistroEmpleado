@@ -14,7 +14,34 @@
     Console.WriteLine("registro guardado sastisfactoriamente ");
     Console.ResetColor();
 }
+int menu()
+{
+    Console.Write("1. agregar \n2. mostrar \n3. eliminar \n4 salir  \n. digite  su opcion");
+    int op = int.Parse(Console.ReadLine());
+    return op;
+}
+int main()
+{
+    int op = 0, i = 0;
+    do
+    {
+        Console.WriteLine($"registro  # {i+1}");
+        
+        op = menu();
+        switch (op)
+        {
+            case 1:
+                agregarempleado(i++);
 
+                break;
+        }
+    } while (op != 4);
+        
+    
+    return 0;
+}
+
+main();
 
 
 
