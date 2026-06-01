@@ -13,12 +13,40 @@
     Console.ForegroundColor = ConsoleColor.Green;
     Console.WriteLine("registro guardado sastisfactoriamente ");
     Console.ResetColor();
+
+}
+void mostrardatos(int pos)
+    { 
+    Console.WriteLine("mostrar  registrados");
+    
+    for (int i = 0; i < pos; i++)
+    {
+        Console.WriteLine($"nombre: {empleados[i].nombre}\n Apellido: {empleados[i].apellido} \nCargo: {empleados[i].cargo} \n salario: {empleados[i].salario}");
+
+
+    }
 }
 int menu()
 {
-    Console.Write("1. agregar \n2. mostrar \n3. eliminar \n4 salir  \n. digite  su opcion");
+    Console.Write("1. agregar \n2. mostrar \n3. guardar \n4 salir  \n. digite  su opcion");
     int op = int.Parse(Console.ReadLine());
     return op;
+    
+}
+void guardarempleados (int pos )
+
+{
+    StreamWriter archivo = new StreamWriter(" C:\\programacion \\empleados.csv ");
+    for (int i=0; i < pos; i++)
+
+    {
+        archivo.WriteLine($"{empleados[i].nombre}; { empleados[i].apellido};{ empleados[i].cargo};{ empleados[i].salario}");
+        archivo.Close();
+    }
+        
+
+    
+
 }
 int main()
 {
@@ -34,6 +62,15 @@ int main()
                 agregarempleado(i++);
 
                 break;
+            case 2:
+                mostrardatos(i);
+                break;
+                default: 
+                Console.WriteLine("opcion no valida...");
+                break;
+                case 3:
+                guardarempleados(i);
+                break;   
         }
 
 
@@ -55,3 +92,5 @@ struct Empleado
     public double salario;
 
 }
+
+
